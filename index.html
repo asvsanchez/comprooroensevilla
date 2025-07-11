@@ -1,50 +1,918 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Página en Construcción</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Compro Oro en Sevilla con tasación profesional, precios actualizados y pago inmediato. Trato cercano y sin compromiso en Calle Las Mujeres. ¡Te esperamos!">
+  <meta name="keywords"
+    content="compro oro Sevilla, vender oro en Sevilla, tasación de oro, compra venta de oro, joyas de oro, oro usado, tienda de oro Sevilla, mejor precio oro Sevilla, dónde vender oro Sevilla">
+  <meta name="author" content="Compro Oro Sevilla">
+  <title>Compro Oro en Sevilla | Mejor Precio y Pago al Instante</title>
+  <link rel="stylesheet" href="css/fontawesome.css">
+  <link rel="icon" href="img/gold.ico" type="image/x-icon">
   <style>
+    @font-face {
+      font-display: swap;
+      font-family: 'Aboreto';
+      font-style: normal;
+      font-weight: 100;
+      src: url('webfonts/aboreto-v2-latin-regular.woff2') format('woff2');
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: #f0f0f0;
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
       color: #333;
+    }
+
+    header {
+      background: #fff;
+      padding: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .aboreto {
+      font-family: 'Aboreto', sans-serif;
+    }
+
+    .direccion {
+      text-align: center;
+      font-size: 14px;
+      color: #444;
+      background-color: #f5f5f5;
+      padding: 0.5rem 1rem;
+      font-weight: 500;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .logo img {
+      height: 60px;
+      margin-bottom: -10px;
+    }
+
+    .burger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+      margin-right: 20px;
+    }
+
+    .burger div {
+      width: 25px;
+      height: 3px;
+      background: #333;
+      margin: 4px 0;
+      transition: all 0.3s ease;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+      transition: all 0.3s ease-in-out;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      transition: color 0.3s ease;
+      padding: 0.5rem;
+      border-radius: 4px;
+      min-width: fit-content;
+    }
+
+    nav a:hover {
+      color: #fff;
+      background-color: #d4af37;
+    }
+
+    nav#menu.active {
+      background: #f7f7f7;
+    }
+
+    .hero {
+      position: relative;
+    }
+
+    .slogan {
+      text-align: center;
+      padding: 1rem;
+      background: #d4af37;
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .slides-wrapper {
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      height: 250px;
+    }
+
+    .slide {
+      min-width: 100%;
+      padding: 4rem 2rem;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      flex: 0 0 100%;
+      position: relative;
+    }
+
+    .slide h3 {
+      font-size: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .slide p {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .slide::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .dots {
+      text-align: center;
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+    }
+
+    .dots button {
+      font-size: 1.5rem;
+      background: none;
+      border: 2px solid #d4af37;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      margin: 0 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .dots button.active {
+      background: #d4af37;
+      color: #fff;
+    }
+
+    .container {
+      padding: 2rem;
+      padding-top: 0;
+      padding-bottom: 0;
+      max-width: 1000px;
+      margin: auto;
+      margin-top: 1rem !important;
+    }
+
+    section {
+      margin-bottom: 1rem;
+      scroll-margin-top: 80px;
+    }
+
+    h2:not(#title) {
+      color: #d4af37;
+      margin-bottom: 1rem;
+      font-size: 2.2rem;
+      text-align: left;
+      padding: 0;
+      font-family: 'Aboreto', sans-serif;
+    }
+
+    .text-center {
+      text-align: center;
+      margin-top: 40px;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .elemento-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+      margin-left: 10px;
+    }
+
+    #tarifas .elemento-grid {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .elemento-item {
+      background: #f7f7f7;
+      border: 2px solid #e3e3e3;
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+      font-size: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .elemento-item p {
+      margin-top: 0.5rem;
+      color: black;
+      font-size: 1rem;
+    }
+
+    .elemento-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+      border-color: #ffd700;
+    }
+
+    #tarifas .elemento-item {
+      border: 4px solid #ffffff;
+      animation: resplandor 2s infinite alternate;
+      background-color: #d4af37;
+      color: black;
+      padding: 2rem;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    @keyframes resplandor {
+      0% {
+        box-shadow: 0 0 10px #ffd700;
+      }
+
+      100% {
+        box-shadow: 0 0 25px #ffd700;
+      }
+    }
+
+    .elemento-item h3 {
+      margin-bottom: 0.5rem;
+      color: black;
+      font-size: 1.4rem;
+    }
+
+    .elemento-item .precio {
+      font-size: 3.5rem;
+      margin: 0.5rem 0;
+      position: relative;
+      background: linear-gradient(90deg, black 10%, #b0b0b0 50%, black 100%);
+      background-size: 200% auto;
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      animation: shine 5s linear infinite;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    @keyframes shine {
+      0% {
+        background-position: 200% center;
+      }
+
+      100% {
+        background-position: -200% center;
+      }
+    }
+
+    .addressWidth {
+      max-width: 46%;
+    }
+
+    .elemento-item .descripcion {
+      font-size: 1rem;
+      /* color: #666; */
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    .opiniones .opinion {
+      margin-bottom: 1rem;
+      padding: 1rem;
+      background: #f1f1f1;
+      border-left: 5px solid #d4af37;
+    }
+
+    .elemento-item .euro {
+      width: max-content;
+      margin: 0;
+      font-size: 1.4rem;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background: #d4af37;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #b8942f;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      font-size: 2rem;
+      background: #25D366;
+      color: white;
+      padding: 0.4rem 1rem;
+      border-radius: 50%;
+      text-decoration: none;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      z-index: 999;
+      height: 60px;
+    }
+
+    .whatsapp-float::before {
+      content: "\f232";
+      font-family: "Font Awesome 5 Free";
+      position: absolute;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem 1rem;
+      background: #f4f4f4;
+      color: #777;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #777;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .proceso-pasos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .paso {
+      background: #fff;
+      border: 2px solid #ddd;
+      border-radius: 50%;
+      width: 175px;
+      height: 175px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      margin: 0;
-      text-align: center;
-      padding: 20px;
+      padding: 1rem;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
     }
-    h1 {
-      font-size: 3rem;
-      color: #d4af37;
+
+    .paso:hover {
+      transform: scale(1.05);
+    }
+
+    .icono {
+      font-size: 1.8rem;
       margin-bottom: 0.5rem;
     }
-    p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
+
+    .paso p {
+      font-size: 0.9rem;
+      color: #444;
+      margin: 0;
+      line-height: 1.2;
     }
-    .loader {
-      border: 8px solid #f3f3f3;
-      border-top: 8px solid #d4af37;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      animation: spin 1.5s linear infinite;
-      margin: 0 auto;
+
+    .flecha {
+      font-size: 1.5rem;
+      color: #888;
     }
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+
+
+    @media (max-width: 768px) {
+      .proceso-pasos {
+        flex-direction: column;
+      }
+
+      .addressWidth {
+        max-width: 100%;
+      }
+
+      .flecha {
+        transform: rotate(90deg);
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        background: white;
+        padding: 1rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .burger {
+        display: flex;
+      }
+
+      #tarifas .elemento-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 0.3rem;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .elemento-item h3 {
+        font-size: 1rem;
+        margin: -1rem 0;
+
+      }
+
+      .elemento-item .descripcion {
+        font-size: 0.8rem;
+        line-height: 1.4;
+        margin: -0.2rem 0;
+      }
+
+      .elemento-item .euro {
+        margin: 0;
+        font-size: 1rem;
+      }
+
+      #tarifas .elemento-item {
+        padding: 1rem;
+        max-width: 97%;
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+        font-size: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      @keyframes resplandor {
+        0% {
+          box-shadow: 0 0 10px #ffd700;
+        }
+
+        100% {
+          box-shadow: 0 0 6px #ffd700;
+        }
+      }
+
+      .elemento-item .precio {
+        font-size: 2.3rem;
+        margin: 0.3rem 0;
+      }
+
+      .precio-brillante {
+        font-size: 2.3rem;
+      }
     }
   </style>
 </head>
+
 <body>
-  <h1>Estamos trabajando en ello</h1>
-  <p>Esta página estará disponible muy pronto. Gracias por tu paciencia.</p>
-  <div class="loader"></div>
+  <header>
+    <div class="logo"><img src="img/logo-comproorosevilla.png" alt="Logo Compro Oro"></div>
+    <div class="burger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <nav id="menu" class="aboreto">
+      <a href="#tarifas">Precios</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#porque">Elígenos</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#opiniones">Opiniones</a>
+      <a href="#contacto" style="margin-right: 10px;">Contacto</a>
+    </nav>
+  </header>
+
+  <div class="hero aboreto">
+    <div class="direccion" style="display: flex;">
+      <a href="#bermejales" style="color: black; text-decoration: none; width: 50%; text-align: center;">
+        <h3 id="title">📍 Compro Oro Bermejales</h3>
+      </a>
+      <a href="#pinoMontano" style="color: black; text-decoration: none; width: 50%; text-align: center;">
+        <h3 id="title">📍 Compro Oro Pino Montano</h3>
+      </a>
+    </div>
+    <section id="tarifas" class="container text-center" style="text-align: -webkit-center;">
+      <div class="elemento-grid">
+        <div class="elemento-item"
+          style="background-color: #d4af37; color: black; padding: 2rem; width: 250px; border-radius: 10px;">
+          <h3 style="margin-bottom: 1rem; font-weight: bold;">ORO DE 24 KILATES</h3>
+          <p class="descripcion">Pagamos hasta</p>
+          <p id="precio24k" class="precio">🔄</p>
+          <p class="euro">€/GR</p>
+        </div>
+        <div class="elemento-item"
+          style="background-color: #d4af37; color: black; padding: 2rem; width: 250px; border-radius: 10px;">
+          <h3 style=" margin-bottom: 1rem; font-weight: bold;">ORO DE 18 KILATES</h3>
+          <p class="descripcion">Pagamos hasta</p>
+          <p id="precio18k" class="precio">🔄</p>
+          <p class="euro">€/GR</p>
+        </div>
+        <div class="elemento-item"
+          style="background-color: #d4af37; color: black; padding: 2rem; width: 250px; border-radius: 10px;">
+          <h3 style="margin-bottom: 1rem; font-weight: bold;">ORO DE 14 KILATES</h3>
+          <p class="descripcion">Pagamos hasta</p>
+          <p id="precio14k" class="precio">50</p>
+          <p class="euro">€/GR</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 15px; background-color: #000; color: #d4af37; padding: 0.5rem;">
+        <div
+          style="display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center; max-width: 1200px; margin: auto;">
+          <div class="addressWidth" style="margin: 1rem;">
+            <h3 style="letter-spacing: 1px; margin-bottom: 5px;">COMPRO ORO BERMEJALES</h3>
+            <hr style="border: 0.5px solid #d4af37; width: 50%; margin: 0.5rem auto;">
+            <p style="color: #fff; margin-top: 5px">Nuestro Compro Oro Bermejales está ubicado en:</p>
+            <p style="color: #d4af37; margin-top: 5px">Calle Nuestra Señora del Pilar 112, Sevilla</p>
+            <p style="color: #fff; margin-top: 5px">Teléfono: <a href="tel:+34611023363"
+                style="color: #d4af37; text-decoration: none;">611 023 363</a></p>
+          </div>
+          <div class="addressWidth" style="margin: 1rem;">
+            <h3 style="letter-spacing: 1px; margin-bottom: 5px;">COMPRO ORO PINO MONTANO</h3>
+            <hr style="border: 0.5px solid #d4af37; width: 50%; margin: 0.5rem auto;">
+            <p style="color: #fff; margin-top: 5px">Nuestro Compro Oro Pino Montano está ubicado en:</p>
+            <p style="color: #d4af37; margin-top: 5px">Calle Parque de Grazalema 18, Sevilla (frente a la S-30)</p>
+            <p style="color: #fff; margin-top: 5px">Teléfono: <a href="tel:+34611023363"
+                style="color: #d4af37; text-decoration: none;">611 023 363</a></p>
+          </div>
+        </div>
+      </div>
+      <!--<div class="elemento-text" style="margin-top: 15px;">
+                <h3>¡Aprovecha hoy los mejores precios por tu oro!</h3>
+            </div>-->
+      <div style="display: flex; justify-content: center; align-items: center; margin-top: -15px; margin-bottom: 20px;">
+        <img src="img/woman-surprised.png" alt="Compro Oro Sevilla mujer sorprendida"
+          style="width: 100%; max-width: 280px; height: auto; border-radius: 8px;">
+      </div>
+    </section>
+    <div class="slides-wrapper">
+      <div class="slides" id="slides">
+        <div class="slide" style="background-image: url('img/money.jpeg');">
+          <h3>Visítanos 🏪</h3>
+          <p>Encuentranos en nuestros establecimientos</p>
+        </div>
+        <div class="slide" style="background-image: url('img/ingot.jpeg');">
+          <h3>Confianza 💼</h3>
+          <p>Nos avalan 15 años de experiencia</p>
+        </div>
+        <div class="slide" style="background-image: url('img/watch.jpeg');">
+          <h3>Tasación 💶</h3>
+          <p>Precio máximo garantizado</p>
+        </div>
+      </div>
+      <div class="dots" id="dots"></div>
+    </div>
+  </div>
+
+  <main class="container">
+    <section id="nosotros" style="display: flex; flex-wrap: wrap; align-items: center; gap: 2rem; margin-top: 40px;">
+      <div style="flex: 1; min-width: 280px; text-align: justify;">
+        <h2>Sobre nosotros</h2>
+        <p>Somos una empresa sevillana con más de 15 años de experiencia en el sector de la compra y venta de
+          metales preciosos. Durante todo este tiempo, hemos consolidado una reputación basada en la
+          honestidad,
+          la profesionalidad y el compromiso con nuestros clientes.</p>
+
+        <p>Nos especializamos en la compra de oro, plata, joyas, monedas y otros objetos valiosos, ofreciendo
+          siempre las mejores condiciones del mercado. Nuestros precios se actualizan diariamente según la
+          cotización oficial, asegurando que obtengas una tasación justa, clara y sin letra pequeña.</p>
+
+        <p>Contamos con un equipo humano formado por expertos tasadores que te atenderán de manera personalizada
+          y
+          confidencial. Valoramos tu tiempo y tus necesidades, por eso realizamos tasaciones al momento y sin
+          compromiso, en un entorno cómodo y seguro.</p>
+
+        <p>Nuestra prioridad es brindarte una experiencia transparente y satisfactoria, tanto si vienes a vender
+          una
+          joya heredada como si deseas obtener liquidez con total confianza. Trabajamos para que te sientas
+          informado y acompañado en todo momento.</p>
+      </div>
+      <div style="flex: 1; min-width: 280px;">
+        <img src="img/jairo_bermejales.jpeg" alt="Local de compro oro en Sevilla"
+          style="width: 100%; height: auto; border-radius: 8px;">
+        <img src="img/jairo_pino.jpeg" alt="Local de compro oro en Sevilla"
+          style="width: 100%; height: auto; border-radius: 8px;">
+      </div>
+    </section>
+
+    <section id="servicios" class="text-center">
+      <h2>Servicios</h2>
+      <div class="elemento-grid">
+        <div class="elemento-item">💍<p>Compra de joyas de oro</p>
+        </div>
+        <div class="elemento-item">🆓<p>Asesoramiento gratuito</p>
+        </div>
+        <div class="elemento-item">🧠<p>Tasación profesional sin compromiso</p>
+        </div>
+      </div>
+      <img src="img/pesaje-oro.jpg" alt="Procedimiento de pesaje del oro en compro oro Sevilla"
+        style="width: 100%; height: auto; border-radius: 30px; padding: 20px;">
+    </section>
+
+    <section id="porque" class="text-center">
+      <h2>¿Por qué elegirnos?</h2>
+      <p style="max-width: auto; margin-bottom: 20px; text-align: justify;">
+        En Compro Oro Sevilla nos diferenciamos por ofrecer un servicio profesional, transparente y cercano.
+        Sabemos lo importante que es para ti obtener el máximo valor por tus piezas, por eso trabajamos con
+        cotizaciones actualizadas diariamente, sin comisiones ocultas ni sorpresas.
+        Nuestro equipo de tasadores expertos te asesorará en todo momento, garantizando una experiencia cómoda,
+        segura y confidencial.
+      </p>
+      <div class="elemento-grid">
+        <div class="elemento-item">📊<p>Precios actualizados diariamente</p>
+        </div>
+        <div class="elemento-item">🙋<p>Atención personalizada</p>
+        </div>
+        <div class="elemento-item">🌟<p>Más de 1000 clientes satisfechos</p>
+        </div>
+        <div class="elemento-item">🔒<p>Privacidad y discreción total</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="proceso" class="text-center">
+      <h2>Proceso</h2>
+      <p style="max-width: auto; margin-bottom: 20px; text-align: justify;">
+        En Compro Oro Sevilla te ofrecemos un proceso sencillo, transparente y rápido para vender tus piezas de
+        oro o joyas. Nos aseguramos de que cada paso sea claro y cómodo para ti, sin presiones ni obligaciones.
+      </p>
+      <div class="proceso-pasos">
+        <div class="paso">
+          <div class="icono">💎</div>
+          <p>Trae tus piezas<br>a nuestra tienda</p>
+        </div>
+        <div class="flecha">➡️</div>
+        <div class="paso">
+          <div class="icono">🔍</div>
+          <p>Tasación al instante<br>por expertos</p>
+        </div>
+        <div class="flecha">➡️</div>
+        <div class="paso">
+          <div class="icono">📈</div>
+          <p>Valor actualizado<br>por gramo</p>
+        </div>
+        <div class="flecha">➡️</div>
+        <div class="paso">
+          <div class="icono">💵</div>
+          <p>Pago inmediato<br>en efectivo o transferencia</p>
+        </div>
+      </div>
+      <p style="max-width: auto; margin-bottom: 20px; margin-top: 20px; text-align: justify;">
+        Nuestro compromiso es que salgas satisfecho y con total confianza en el trato recibido. Además, si
+        tienes dudas sobre el valor de una joya o si realmente es oro, puedes venir sin compromiso. Estamos para
+        ayudarte y asesorarte.
+      </p>
+    </section>
+
+    <section id="opiniones" class="opiniones" style="margin-top: 40px;">
+      <h2>Opiniones de nuestros clientes</h2>
+      <div class="opinion">
+        <p>"Muy buen trato, me explicaron todo y me pagaron al momento. Recomendado 100%." - <strong>Laura
+            M.</strong></p>
+      </div>
+      <div class="opinion">
+        <p>"Los mejores precios que encontré en Sevilla. Profesionales y rápidos." - <strong>Antonio G.</strong>
+        </p>
+      </div>
+      <div class="opinion">
+        <p>"Volveré sin duda. Son muy honestos y atentos." - <strong>Carmen F.</strong></p>
+      </div>
+    </section>
+
+    <section id="contacto" class="text-center aboreto" style="margin-top: 40px;">
+      <h2>Contacto</h2>
+
+      <div id="bermejales" style="scroll-margin-top: 80px;">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1585.8671995608436!2d-5.979626048869218!3d37.34879623418728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126ff4387af63f%3A0x2535afd5a163792e!2sCOMPRO%20ORO%20Y%20PLATA%20SEVILLA%20BERMEJALES!5e0!3m2!1ses!2ses!4v1750763489000!5m2!1ses!2ses"
+          width="100%" height="300" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+      <br />
+      <div style="background-color: #000; color: #d4af37; padding: 1rem;">
+        <div
+          style="display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center; max-width: 1200px; margin: auto;">
+          <div style="margin: 1rem; margin-bottom: 0;">
+            <h3 style="letter-spacing: 1px;">📍 COMPRO ORO BERMEJALES</h3>
+            <hr style="border: 0.5px solid #d4af37; width: 50%; margin: 0.5rem auto;">
+            <h3 style="letter-spacing: 1px;">VISÍTANOS</h3>
+            <p style="color: #fff;">Calle Nuestra Señora del Pilar 112, Sevilla</p>
+          </div>
+          <div style="margin: 1rem;">
+            <h3 style="letter-spacing: 1px;">CONTACTO</h3>
+            <p style="color: #fff;">Teléfono: <a href="tel:+34611023363"
+                style="color: #d4af37; text-decoration: none;">611 023 363</a></p>
+            <p style="color: #fff;">WhatsApp disponible</p>
+            <p style="color: #fff;">Email: <a href="mailto:info@comprooroensevilla.es"
+                style="color: #d4af37; text-decoration: none;">info@comprooroensevilla.es</a></p>
+          </div>
+        </div>
+      </div>
+      <br />
+
+      <div id="pinoMontano" style="scroll-margin-top: 80px;">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.8604896012353!2d-5.9735629242014046!3d37.4167722720777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1269d917ac0c37%3A0x783bc107a63f256b!2sCOMPRO%20ORO%20Y%20PLATA%20SEVILLA%20PINO%20MONTANO!5e0!3m2!1ses!2ses!4v1750762848565!5m2!1ses!2ses"
+          width="100%" height="300" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+      <br />
+      <div style="background-color: #000; color: #d4af37; padding: 1rem;">
+        <div
+          style="display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center; max-width: 1200px; margin: auto;">
+          <div style="margin: 1rem; margin-bottom: 0;">
+            <h3 style="letter-spacing: 1px;">📍 COMPRO ORO PINO MONTANO</h3>
+            <hr style="border: 0.5px solid #d4af37; width: 50%; margin: 0.5rem auto;">
+            <h3 style="letter-spacing: 1px;">VISÍTANOS</h3>
+            <p style="color: #fff;">Calle Parque de Grazalema 18, Sevilla (frente a la S-30)</p>
+          </div>
+          <div style="margin: 1rem;">
+            <h3 style="letter-spacing: 1px;">CONTACTO</h3>
+            <p style="color: #fff;">Teléfono: <a href="tel:+34611023363"
+                style="color: #d4af37; text-decoration: none;">611 023 363</a></p>
+            <p style="color: #fff;">WhatsApp disponible</p>
+            <p style="color: #fff;">Email: <a href="mailto:info@comprooroensevilla.es"
+                style="color: #d4af37; text-decoration: none;">info@comprooroensevilla.es</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <a href="https://api.whatsapp.com/send?phone=+34611023363" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <footer>
+    Compro Oro Sevilla &copy; XoD Apps
+  </footer>
+
+  <script>
+    const slides = document.getElementById('slides');
+    const totalSlides = slides.children.length;
+    const dotsContainer = document.getElementById('dots');
+    let currentIndex = 0;
+    let startX = 0;
+    let endX = 0;
+    let autoSlideInterval;
+
+    fetch('https://api.allorigins.win/raw?url=https://www.joyeriachaves.es/oro/')
+      .then(res => res.text())
+      .then(html => {
+        const div = document.createElement('div');
+        div.innerHTML = html;
+        const text = div.textContent;
+        const matches = [...text.matchAll(/(\d+,\d+)\s*€\/g/g)];
+        if (matches.length >= 3) {
+          const precio24k = matches[0][1].replace(',', '.');
+          const precio18k = matches[2][1].replace(',', '.');
+          document.getElementById('precio24k').textContent = precio24k;
+          document.getElementById('precio18k').textContent = precio18k;
+        }
+      })
+      .catch(console.error);
+
+    slides.addEventListener('touchstart', e => {
+      startX = e.touches[0].clientX;
+    });
+
+    slides.addEventListener('touchend', e => {
+      const endX = e.changedTouches[0].clientX;
+      const diffX = startX - endX;
+
+      if (Math.abs(diffX) > 40) {
+        if (diffX > 0) {
+          currentIndex = (currentIndex + 1) % totalSlides;
+        } else {
+          currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        }
+        updateSlide();
+        resetAutoSlide();
+      }
+    });
+
+    function updateSlide(index = currentIndex) {
+      currentIndex = index;
+      slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+      updateDots();
+    }
+
+    function updateDots() {
+      const dots = document.querySelectorAll('#dots button');
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentIndex);
+      });
+    }
+
+    for (let i = 0; i < totalSlides; i++) {
+      const btn = document.createElement('button');
+      btn.onclick = () => {
+        updateSlide(i);
+        resetAutoSlide();
+      };
+      dotsContainer.appendChild(btn);
+    }
+    updateSlide(0);
+
+    function startAutoSlide() {
+      autoSlideInterval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateSlide();
+      }, 5000);
+    }
+
+    function resetAutoSlide() {
+      clearInterval(autoSlideInterval);
+      startAutoSlide();
+    }
+
+    startAutoSlide();
+
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('active');
+      document.body.classList.toggle('menu-open');
+    }
+
+    document.addEventListener('click', function (event) {
+      const menu = document.getElementById('menu');
+      const burger = document.querySelector('.burger');
+      const isClickInsideMenu = menu.contains(event.target);
+      const isClickOnBurger = burger.contains(event.target);
+      if (!isClickInsideMenu && !isClickOnBurger && menu.classList.contains('active')) {
+        menu.classList.remove('active');
+        document.body.classList.remove('menu-open');
+      }
+    });
+
+    window.history.scrollRestoration = 'manual';
+
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+      }, 15);
+    });
+  </script>
 </body>
+
 </html>

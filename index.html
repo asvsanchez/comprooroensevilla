@@ -558,14 +558,14 @@
           style="background-color: #d4af37; color: black; padding: 2rem; width: 250px; border-radius: 10px;">
           <h3 style="margin-bottom: 1rem; font-weight: bold;">ORO DE 24 KILATES</h3>
           <p class="descripcion">Pagamos hasta</p>
-          <p id="precio24k" class="precio">🔄</p>
+          <p id="precio24k" class="precio">...</p>
           <p class="euro">€/GR</p>
         </div>
         <div class="elemento-item"
           style="background-color: #d4af37; color: black; padding: 2rem; width: 250px; border-radius: 10px;">
           <h3 style=" margin-bottom: 1rem; font-weight: bold;">ORO DE 18 KILATES</h3>
           <p class="descripcion">Pagamos hasta</p>
-          <p id="precio18k" class="precio">🔄</p>
+          <p id="precio18k" class="precio">...</p>
           <p class="euro">€/GR</p>
         </div>
         <div class="elemento-item"
@@ -817,6 +817,9 @@
     let endX = 0;
     let autoSlideInterval;
 
+    document.getElementById('precio24k').textContent = localStorage.getItem('precio24k') || '...';
+    document.getElementById('precio18k').textContent = localStorage.getItem('precio18k') || '...';
+
     fetch('https://api.allorigins.win/raw?url=https://www.joyeriachaves.es/oro/')
       .then(res => res.text())
       .then(html => {
@@ -827,11 +830,16 @@
         if (matches.length >= 3) {
           const precio24k = matches[0][1].replace(',', '.');
           const precio18k = matches[2][1].replace(',', '.');
+
           document.getElementById('precio24k').textContent = precio24k;
           document.getElementById('precio18k').textContent = precio18k;
+
+          localStorage.setItem('precio24k', precio24k);
+          localStorage.setItem('precio18k', precio18k);
         }
       })
       .catch(console.error);
+
 
     slides.addEventListener('touchstart', e => {
       startX = e.touches[0].clientX;

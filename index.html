@@ -74,18 +74,20 @@
           <div class="addressWidth" style="padding: 1rem; background-color: #000;">
             <h3 style="letter-spacing: 1px; margin-bottom: 5px;">COMPRO ORO BERMEJALES</h3>
             <hr style="border: 0.5px solid #d4af37; width: 50%; margin: 0.5rem auto;">
-            <p style="color: #fff; margin-top: 5px; font-family: Arial, Helvetica, sans-serif; font-size: 16px;">Nuestro Compro Oro Bermejales está ubicado en:</p>
+            <p style="color: #fff; margin-top: 5px; font-family: Arial, Helvetica, sans-serif; font-size: 16px;">Nuestro
+              Compro Oro Bermejales está ubicado en:</p>
             <p style="color: #d4af37; margin-top: 5px">Calle Nuestra Señora del Pilar 12, Sevilla</p>
-            <p style="color: #fff; margin-top: 5px; font-family: Arial, Helvetica, sans-serif; font-size: 16px;">Teléfono: <a href="tel:+34611023363"
-                style="color: #d4af37; text-decoration: none;">611 023 363</a></p>
+            <p style="color: #fff; margin-top: 5px; font-family: Arial, Helvetica, sans-serif; font-size: 16px;">
+              Teléfono: <a href="tel:+34611023363" style="color: #d4af37; text-decoration: none;">611 023 363</a></p>
           </div>
           <div class="addressWidth addressBottom" style="padding: 1rem; background-color: #000;">
             <h3 style="letter-spacing: 1px; margin-bottom: 5px;">COMPRO ORO PINO MONTANO</h3>
             <hr style="border: 0.5px solid #d4af37; width: 50%; margin: 0.5rem auto;">
-            <p style="color: #fff; margin-top: 5px; font-family: Arial, Helvetica, sans-serif; font-size: 16px;">Nuestro Compro Oro Pino Montano está ubicado en:</p>
+            <p style="color: #fff; margin-top: 5px; font-family: Arial, Helvetica, sans-serif; font-size: 16px;">Nuestro
+              Compro Oro Pino Montano está ubicado en:</p>
             <p style="color: #d4af37; margin-top: 5px">Calle Parque de Grazalema 18, Sevilla (frente a la S-30)</p>
-            <p style="color: #fff; margin-top: 5px; font-family: Arial, Helvetica, sans-serif; font-size: 16px;">Teléfono: <a href="tel:+34611023363"
-                style="color: #d4af37; text-decoration: none;">611 023 363</a></p>
+            <p style="color: #fff; margin-top: 5px; font-family: Arial, Helvetica, sans-serif; font-size: 16px;">
+              Teléfono: <a href="tel:+34611023363" style="color: #d4af37; text-decoration: none;">611 023 363</a></p>
           </div>
         </div>
       </div>
@@ -114,7 +116,7 @@
   </div>
 
   <main class="container">
-    <section id="nosotros" style="display: flex; flex-wrap: wrap; align-items: center; gap: 2rem; margin-top: 40px;">
+    <section id="nosotros" style="display: flex; flex-wrap: wrap; align-items: center; gap: 2rem; margin-top: 20px;">
       <div style="flex: 1; min-width: 280px; text-align: justify;">
         <h2>Sobre nosotros</h2>
         <p>Somos una empresa sevillana con más de 15 años de experiencia en el sector de la compra y venta de
@@ -213,7 +215,7 @@
       </p>
     </section>
 
-    <section id="opiniones" class="opiniones" style="margin-top: 40px;">
+    <section id="opiniones" class="opiniones" style="margin-top: 20px;">
       <h2>Opiniones de nuestros clientes</h2>
       <div class="opinion">
         <p>"Muy buen trato, me explicaron todo y me pagaron al momento. Recomendado 100%." - <strong>Laura
@@ -228,7 +230,7 @@
       </div>
     </section>
 
-    <section id="contacto" class="text-center aboreto" style="margin-top: 40px;">
+    <section id="contacto" class="text-center aboreto" style="margin-top: 20px;">
       <h2>Contacto</h2>
 
       <div id="bermejales" style="scroll-margin-top: 80px;">
@@ -307,6 +309,8 @@
     let autoSlideInterval;
     const fallback24k = "90.00";
     const fallback18k = "70.00";
+    const idPrecio24k = document.getElementById('precio24k');
+    const idPrecio18k = document.getElementById('precio18k');
 
     let precio24kLocal = fallback24k;
     let precio18kLocal = fallback18k;
@@ -318,22 +322,20 @@
       console.error("LocalStorage no disponible:", e);
     }
 
-    document.getElementById('precio24k').textContent = precio24kLocal;
-    document.getElementById('precio18k').textContent = precio18kLocal;
+    idPrecio24k.textContent = precio24kLocal;
+    idPrecio18k.textContent = precio18kLocal;
+    const parseEuro = s => parseFloat(s.replace(',', '.'));
 
     fetch('https://api.allorigins.win/raw?url=https://www.joyeriachaves.es/oro/')
       .then(res => res.text())
       .then(html => {
-        const div = document.createElement('div');
-        div.innerHTML = html;
-        const text = div.textContent;
-        const matches = [...text.matchAll(/(\d+,\d+)\s*€\/g/g)];
+        const matches = [...html.matchAll(/(\d+,\d+)\s*€\/g/g)];
         if (matches.length >= 3) {
-          const precio24k = (parseFloat(matches[0][1].replace(',', '.')) - 3.5).toFixed(2);
-          const precio18k = (parseFloat(matches[2][1].replace(',', '.')) - 3.5).toFixed(2);
+          const precio24k = (parseEuro(matches[0][1]) - 3.5).toFixed(2);
+          const precio18k = (parseEuro(matches[2][1]) - 3.5).toFixed(2);
 
-          document.getElementById('precio24k').textContent = precio24k;
-          document.getElementById('precio18k').textContent = precio18k;
+          idPrecio24k.textContent = precio24k;
+          idPrecio18k.textContent = precio18k;
 
           try {
             localStorage.setItem('precio24k', precio24k);
@@ -418,8 +420,9 @@
       }
     });
 
-    window.history.scrollRestoration = 'manual';
-    window.scrollTo(0, 0);
+    document.addEventListener('DOMContentLoaded', () => {
+      window.scrollTo(0, 0);
+    });
   </script>
 </body>
 

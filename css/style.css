@@ -106,7 +106,7 @@ nav#menu.active {
 .slides-wrapper {
     overflow: hidden;
     position: relative;
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 10px;
 }
 
@@ -197,7 +197,7 @@ h2:not(#title) {
 
 .text-center {
     text-align: center;
-    margin-top: 40px;
+    margin-top: 20px;
     align-items: center;
     gap: 2rem;
 }

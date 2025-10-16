@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Compro Oro Sanlúcar la Mayor con tasación gratuita y pago inmediato. Vende tus joyas de oro al mejor precio en nuestros establecimientos. ¡Confianza, rapidez y sin compromiso!">
+  <meta name="keywords"
+    content="compro oro Sanlúcar la Mayor, vender oro Sanlúcar la Mayor, tasación gratuita oro Sanlúcar la Mayor, dónde vender oro en Sanlúcar la Mayor, joyas oro segunda mano Sanlúcar la Mayor, tienda de oro en Sanlúcar la Mayor">
+  <meta name="author" content="Compro Oro Sanlúcar la Mayor">
+  <title>Compro Oro Sanlúcar la Mayor - Tasación Gratis y Pago Inmediato</title>
+  <link rel="stylesheet" href="../css/fontawesome.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="../img/logo-compro-oro.png" type="image/x-icon">
+</head>
+
+<body>
+  <header>
+    <div class="logo"><img src="../img/logo-compro-oro.png" alt="Logo Compro Oro"></div>
+    <div class="burger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <nav id="menu" class="aboreto">
+      <a href="#tarifas">Precios</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#porque">Elígenos</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#opiniones">Opiniones</a>
+      <a href="#contacto" style="margin-right: 10px;">Contacto</a>
+    </nav>
+  </header>
+
+  <div class="hero aboreto">
+    <div class="direccion">
+      <h1 style="color: black; text-align: center;">Compro Oro Sanlúcar la Mayor</h1>
+    </div>
+    <div class="direccion" style="display: flex;">
+      <a href="#bermejales" style="color: black; text-decoration: none; width: 50%; text-align: center;">
+        <h2 id="title">Compro Oro Bermejales</h2>
+        <p>📍 Calle Nuestra Señora del Pilar 12, Sevilla</p>
+      </a>
+      <a href="#pinoMontano" style="color: black; text-decoration: none; width: 50%; text-align: center;">
+        <h2 id="title">Compro Oro Pino Montano</h2>
+        <p>📍 Calle Parque de Grazalema 18, Sevilla</p>
+      </a>
+    </div>
+
+    <section id="tarifas" class="container text-center" style="text-align: -webkit-center;">
+      <div id="precios-container" style="position: relative;">
+        <div id="spinner-overlay">
+          <div class="spinner-container">
+            <p class="spinner-text">Cargando precios...</p>
+            <div class="spinner"></div>
+          </div>
+        </div>
+
+        <div class="elemento-grid" id="precios-grid" style="opacity: 0; margin: 0;">
+          <div class="elemento-item elemento-gold">
+            <h3 style="margin-bottom: 1rem; font-weight: bold;">ORO DE 24 KILATES</h3>
+            <p class="descripcion">Pagamos hasta</p>
+            <p id="precio24k" class="precio">90.00</p>
+            <p class="euro">€/GR</p>
+          </div>
+
+          <div class="elemento-item elemento-gold">
+            <h3 style="margin-bottom: 1rem; font-weight: bold;">ORO DE 18 KILATES</h3>
+            <p class="descripcion">Pagamos hasta</p>
+            <p id="precio18k" class="precio">70.00</p>
+            <p class="euro">€/GR</p>
+          </div>
+
+          <div class="elemento-item elemento-gold">
+            <h3 style="margin-bottom: 1rem; font-weight: bold;">ORO DE 14 KILATES</h3>
+            <p class="descripcion">Pagamos hasta</p>
+            <p id="precio14k" class="precio">50.00</p>
+            <p class="euro">€/GR</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 15px; color: #d4af37; padding: 0.5rem;">
+        <div
+          style="display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center; max-width: 1200px; margin: auto;">
+          <div class="addressWidth" style="padding: 1rem; background-color: #000;">
+            <h3 style="letter-spacing: 1px; margin-bottom: 5px;">COMPRO ORO BERMEJALES</h3>
+            <hr style="border: 0.5px solid #d4af37; width: 50%; margin: 0.5rem auto;">
+            <p style="color: #fff; margin-top: 5px; font-family: Arial, Helvetica, sans-serif; font-size: 16px;">Nuestro
+              Compro Oro Bermejales está ubicado en:</p>
+            <p style="color: #d4af37; margin-top: 5px">Calle Nuestra Señora del Pilar 12, Sevilla</p>
+            <p style="color: #fff; margin-top: 5px; font-family: Arial, Helvetica, sans-serif; font-size: 16px;">
+              Teléfono: <a class="aboreto" href="tel:+34611023363" style="color: #d4af37; text-decoration: none;">611
+                023
+                363</a></p>
+          </div>
+          <div class="addressWidth addressBottom" style="padding: 1rem; background-color: #000;">
+            <h3 style="letter-spacing: 1px; margin-bottom: 5px;">COMPRO ORO PINO MONTANO</h3>
+            <hr style="border: 0.5px solid #d4af37; width: 50%; margin: 0.5rem auto;">
+            <p style="color: #fff; margin-top: 5px; font-family: Arial, Helvetica, sans-serif; font-size: 16px;">Nuestro
+              Compro Oro Pino Montano está ubicado en:</p>
+            <p style="color: #d4af37; margin-top: 5px">Calle Parque de Grazalema 18, Sevilla</p>
+            <p style="color: #d4af37;">(Frente a la S-30)</p>
+            <p style="color: #fff; margin-top: 5px; font-family: Arial, Helvetica, sans-serif; font-size: 16px;">
+              Teléfono: <a class="aboreto" href="tel:+34611023363" style="color: #d4af37; text-decoration: none;">611
+                023
+                363</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="slides-wrapper">
+      <div class="slides" id="slides">
+        <div class="slide" style="background-image: url('../img/money.jpeg');">
+          <h3>Visítanos 🏪</h3>
+          <p>Encuentranos en nuestros establecimientos</p>
+        </div>
+        <div class="slide" style="background-image: url('../img/ingot.jpeg');">
+          <h3>Confianza 💼</h3>
+          <p>Nos avalan 15 años de experiencia</p>
+        </div>
+        <div class="slide" style="background-image: url('../img/watch.jpeg');">
+          <h3>Tasación 💶</h3>
+          <p>Precio máximo garantizado</p>
+        </div>
+      </div>
+      <div class="dots" id="dots"></div>
+    </div>
+  </div>
+
+  <main class="container">
+    <section id="nosotros" style="display: flex; flex-wrap: wrap; align-items: center; gap: 2rem; margin-top: 20px;">
+      <div style="flex: 1; min-width: 280px; text-align: justify;">
+        <h2>Sobre nosotros</h2>
+        <p>Somos una empresa sevillana con más de 15 años de experiencia en el sector de la compra y venta de
+          metales preciosos. Durante todo este tiempo, hemos consolidado una reputación basada en la
+          honestidad,
+          la profesionalidad y el compromiso con nuestros clientes.</p>
+
+        <p>Nos especializamos en la compra de oro, plata, joyas, monedas y otros objetos valiosos, ofreciendo
+          siempre las mejores condiciones del mercado. Nuestros precios se actualizan diariamente según la
+          cotización oficial, asegurando que obtengas una tasación justa, clara y sin letra pequeña.</p>
+
+        <p>Contamos con un equipo humano formado por expertos tasadores que te atenderán de manera personalizada
+          y
+          confidencial. Valoramos tu tiempo y tus necesidades, por eso realizamos tasaciones al momento y sin
+          compromiso, en un entorno cómodo y seguro.</p>
+
+        <p>Nuestra prioridad es brindarte una experiencia transparente y satisfactoria, tanto si vienes a vender
+          una
+          joya heredada como si deseas obtener liquidez con total confianza. Trabajamos para que te sientas
+          informado y acompañado en todo momento.</p>
+      </div>
+      <div style="flex: 1; min-width: 280px;">
+        <img src="../img/jairo_bermejales.jpeg" alt="Local de compro oro en Bermejales" class="img-local">
+        <img src="../img/jairo_pino.jpeg" alt="Local de compro oro en Pino Montano" class="img-local">
+      </div>
+    </section>
+
+    <section id="servicios" class="text-center">
+      <h2>Servicios</h2>
+      <div class="elemento-grid">
+        <div class="elemento-item">💍<p>Compra de joyas de oro</p>
+        </div>
+        <div class="elemento-item">🆓<p>Asesoramiento gratuito</p>
+        </div>
+        <div class="elemento-item">🧠<p>Tasación profesional sin compromiso</p>
+        </div>
+      </div>
+      <img src="../img/pesaje-oro.jpg" alt="Procedimiento de pesaje del oro en compro oro"
+        style="width: 100%; height: auto; border-radius: 30px; padding: 20px;">
+    </section>
+
+    <section id="porque" class="text-center">
+      <h2>¿Por qué elegirnos?</h2>
+      <p class="long-text">
+        En Compro Oro Sevilla nos diferenciamos por ofrecer un servicio profesional, transparente y cercano.
+        Sabemos lo importante que es para ti obtener el máximo valor por tus piezas, por eso trabajamos con
+        cotizaciones actualizadas diariamente, sin comisiones ocultas ni sorpresas.
+        Nuestro equipo de tasadores expertos te asesorará en todo momento, garantizando una experiencia cómoda,
+        segura y confidencial.
+      </p>
+      <div class="elemento-grid">
+        <div class="elemento-item">📊<p>Precios actualizados diariamente</p>
+        </div>
+        <div class="elemento-item">🙋<p>Atención personalizada</p>
+        </div>
+        <div class="elemento-item">🌟<p>Más de 1000 clientes satisfechos</p>
+        </div>
+        <div class="elemento-item">🔒<p>Privacidad y discreción total</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="proceso" class="text-center">
+      <h2>Proceso</h2>
+      <p class="long-text">
+        En Compro Oro Sevilla te ofrecemos un proceso sencillo, transparente y rápido para vender tus piezas de
+        oro o joyas. Nos aseguramos de que cada paso sea claro y cómodo para ti, sin presiones ni obligaciones.
+      </p>
+      <div class="proceso-pasos">
+        <div class="paso">
+          <div class="icono">💎</div>
+          <p>Trae tus piezas<br>a nuestra tienda</p>
+        </div>
+        <div class="flecha">➡️</div>
+        <div class="paso">
+          <div class="icono">🔍</div>
+          <p>Tasación al instante<br>por expertos</p>
+        </div>
+        <div class="flecha">➡️</div>
+        <div class="paso">
+          <div class="icono">📈</div>
+          <p>Valor actualizado<br>por gramo</p>
+        </div>
+        <div class="flecha">➡️</div>
+        <div class="paso">
+          <div class="icono">💵</div>
+          <p>Pago inmediato<br>en efectivo o transferencia</p>
+        </div>
+      </div>
+      <p class="long-text" style="margin-top: 20px;">
+        Nuestro compromiso es que salgas satisfecho y con total confianza en el trato recibido. Además, si
+        tienes dudas sobre el valor de una joya o si realmente es oro, puedes venir sin compromiso. Estamos para
+        ayudarte y asesorarte.
+      </p>
+    </section>
+
+    <section id="opiniones" class="opiniones" style="margin-top: 20px;">
+      <h2>Opiniones de nuestros clientes</h2>
+      <div class="opinion">
+        <p>"Muy buen trato, me explicaron todo y me pagaron al momento. Recomendado 100%." - <strong>Laura
+            M.</strong></p>
+      </div>
+      <div class="opinion">
+        <p>"Los mejores precios que encontré en Sevilla. Profesionales y rápidos." - <strong>Antonio G.</strong>
+        </p>
+      </div>
+      <div class="opinion">
+        <p>"Volveré sin duda. Son muy honestos y atentos." - <strong>Carmen F.</strong></p>
+      </div>
+    </section>
+
+    <section id="contacto" class="text-center aboreto" style="margin-top: 20px;">
+      <h2>Contacto</h2>
+
+      <div id="bermejales" style="scroll-margin-top: 80px;">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1585.8671995608436!2d-5.979626048869218!3d37.34879623418728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126ff4387af63f%3A0x2535afd5a163792e!2sCOMPRO%20ORO%20Y%20PLATA%20SEVILLA%20BERMEJALES!5e0!3m2!1ses!2ses!4v1750763489000!5m2!1ses!2ses"
+          width="100%" height="300" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+      <br />
+      <div style="background-color: #000; color: #d4af37; padding: 1rem;">
+        <div
+          style="display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center; max-width: 1200px; margin: auto;">
+          <div style="margin: 1rem; margin-bottom: 0;">
+            <h3 style="letter-spacing: 1px;">📍 COMPRO ORO BERMEJALES</h3>
+            <hr style="border: 0.5px solid #d4af37; width: 50%; margin: 0.5rem auto;">
+            <h3 style="letter-spacing: 1px;">VISÍTANOS</h3>
+            <p style="color: #fff;">Calle Nuestra Señora del Pilar 12, Sevilla</p>
+          </div>
+          <div style="margin: 1rem;">
+            <h3 style="letter-spacing: 1px;">CONTACTO</h3>
+            <p style="color: #fff;">Teléfono: <a href="tel:+34611023363"
+                style="color: #d4af37; text-decoration: none;">611 023 363</a></p>
+            <p style="color: #fff;">WhatsApp disponible</p>
+          </div>
+        </div>
+      </div>
+      <br />
+
+      <div id="pinoMontano" style="scroll-margin-top: 80px;">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.8604896012353!2d-5.9735629242014046!3d37.4167722720777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1269d917ac0c37%3A0x783bc107a63f256b!2sCOMPRO%20ORO%20Y%20PLATA%20SEVILLA%20PINO%20MONTANO!5e0!3m2!1ses!2ses!4v1750762848565!5m2!1ses!2ses"
+          width="100%" height="300" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+      <br />
+      <div style="background-color: #000; color: #d4af37; padding: 1rem;">
+        <div
+          style="display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center; max-width: 1200px; margin: auto;">
+          <div style="margin: 1rem; margin-bottom: 0;">
+            <h3 style="letter-spacing: 1px;">📍 COMPRO ORO PINO MONTANO</h3>
+            <hr style="border: 0.5px solid #d4af37; width: 50%; margin: 0.5rem auto;">
+            <h3 style="letter-spacing: 1px;">VISÍTANOS</h3>
+            <p style="color: #fff;">Calle Parque de Grazalema 18, Sevilla (frente a la S-30)</p>
+          </div>
+          <div style="margin: 1rem;">
+            <h3 style="letter-spacing: 1px;">CONTACTO</h3>
+            <p style="color: #fff;">Teléfono: <a href="tel:+34611023363"
+                style="color: #d4af37; text-decoration: none;">611 023 363</a></p>
+            <p style="color: #fff;">WhatsApp disponible</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a href="https://api.whatsapp.com/send?phone=+34611023363" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <footer>
+    Compro Oro Sanlúcar la Mayor &copy; XoD Apps
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+
+</html>

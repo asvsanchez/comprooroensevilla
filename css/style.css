@@ -482,7 +482,6 @@ footer a:hover {
     padding: 30px 20px;
     background: linear-gradient(135deg, #1a1a1a, #000);
     border: 2px solid var(--gold);
-    border-radius: 12px;
     text-align: center;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     box-sizing: border-box;

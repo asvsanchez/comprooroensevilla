@@ -1,7 +1,7 @@
 const monoLoco = false;
 let autoSlideInterval;
 const slides = document.getElementById('slides');
-const totalSlides = slides.children.length;
+const totalSlides = slides ? slides.children.length : 0;
 const dotsContainer = document.getElementById('dots');
 let currentIndex = 0, startX = 0;
 const idPrecio24k = document.getElementById('precio24k');
@@ -15,14 +15,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     try {
-        idPrecio24k.textContent = localStorage.getItem('precio24k');
-        idPrecio18k.textContent = localStorage.getItem('precio18k');
+        if (idPrecio24k && idPrecio18k) {
+            idPrecio24k.textContent = localStorage.getItem('precio24k');
+            idPrecio18k.textContent = localStorage.getItem('precio18k');
+        }
     } catch (e) {
         console.error("LocalStorage no disponible 1: ", e);
     }
 
     // Obtener precios reales con reintento rápido
-    fetchPreciosConReintento();
+    if (idPrecio24k && idPrecio18k) fetchPreciosConReintento();
+
+    if (!slides || !dotsContainer || totalSlides === 0) return;
 
     // Carrusel táctil
     slides.addEventListener('touchstart', e => {
@@ -46,6 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     for (let i = 0; i < totalSlides; i++) {
         const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.setAttribute('aria-label', `Mostrar diapositiva ${i + 1}`);
         btn.onclick = () => {
             updateSlide(i);
             resetAutoSlide();
@@ -62,6 +68,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const burger = document.querySelector('.burger');
         if (!menu.contains(event.target) && !burger.contains(event.target) && menu.classList.contains('active')) {
             menu.classList.remove('active');
+            burger.setAttribute('aria-expanded', 'false');
+            burger.setAttribute('aria-label', 'Abrir menú');
             document.body.classList.remove('menu-open');
         }
     });
@@ -83,7 +91,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function toggleMenu() {
     const menu = document.getElementById('menu');
-    menu.classList.toggle('active');
+    const burger = document.querySelector('.burger');
+    const isOpen = menu.classList.toggle('active');
+    burger.setAttribute('aria-expanded', String(isOpen));
+    burger.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
     document.body.classList.toggle('menu-open');
 }
 
@@ -146,8 +157,10 @@ function fetchPreciosConReintento() {
                     console.error("LocalStorage no disponible 2: ", e);
                 }
                 //Se quita el spinner y mostramos precios
-                document.getElementById('spinner-overlay').style.display = 'none';
-                document.getElementById('precios-grid').style.opacity = '1';
+                const spinner = document.getElementById('spinner-overlay');
+                const pricesGrid = document.getElementById('precios-grid');
+                if (spinner) spinner.style.display = 'none';
+                if (pricesGrid) pricesGrid.style.opacity = '1';
             } else {
                 throw new Error("No se encontraron precios en el HTML.");
             }

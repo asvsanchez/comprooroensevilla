@@ -92,6 +92,14 @@ nav a:hover {
     background-color: var(--gold);
 }
 
+nav a:focus-visible,
+.burger:focus-visible,
+.whatsapp-float:focus-visible,
+.dots button:focus-visible {
+    outline: 3px solid #1a73e8;
+    outline-offset: 3px;
+}
+
 nav#menu.active {
     background: #f7f7f7;
 }
@@ -185,6 +193,17 @@ nav#menu.active {
     max-width: 1000px;
     margin: auto;
     margin-top: 1rem !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
 }
 
 section {

@@ -67,14 +67,18 @@
     <div class="direccion">
       <h1 style="color: black; text-align: center;">Compro Oro Bellavista</h1>
     </div>
-    <div class="direccion">
-      <a href="#bermejales" style="color: black; text-decoration: none; width: 50%; text-align: center;">
+    <div class="direccion" style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+      <a href="#bermejales" style="color: black; text-decoration: none; width: 100%; text-align: center;">
         <h2 id="bermejales-title">Compro Oro Bermejales</h2>
         <p>📍 Calle Nuestra Señora del Pilar 12, Sevilla</p>
       </a>
-      <a href="#pinoMontano" style="color: black; text-decoration: none; width: 50%; text-align: center;">
+      <a href="#pinoMontano" style="color: black; text-decoration: none; width: 100%; text-align: center;">
         <h2 id="pinoMontano-title">Compro Oro Pino Montano</h2>
         <p>📍 Calle Parque de Grazalema 18, Sevilla</p>
+      </a>
+      <a href="#bellavista" style="color: black; text-decoration: none; width: 100%; text-align: center;">
+        <h2 id="bellavista-title">Compro Oro Bellavista</h2>
+        <p>📍 Calle Guadalajara 46, Sevilla</p>
       </a>
     </div>
 
@@ -129,8 +133,8 @@
 
       <div style="margin-top: 15px; color: #d4af37; padding: 0.5rem;">
         <div
-          style="display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center; max-width: 1200px; margin: auto;">
-          <div class="addressWidth" style="padding: 1rem; background-color: #000;">
+          style="display: flex; flex-direction: column; align-items: center; gap: 1rem; max-width: 800px; margin: auto;">
+          <div class="addressWidth" style="padding: 1rem; background-color: #000; width: 100%; box-sizing: border-box;">
             <h3 style="letter-spacing: 1px; margin-bottom: 5px;">COMPRO ORO BERMEJALES</h3>
             <hr style="border: 0.5px solid #d4af37; width: 50%; margin: 0.5rem auto;">
             <p style="color: #fff; margin-top: 5px; font-family: Arial, Helvetica, sans-serif; font-size: 16px;">Nuestro
@@ -141,7 +145,7 @@
                 023
                 363</a></p>
           </div>
-          <div class="addressWidth addressBottom" style="padding: 1rem; background-color: #000;">
+          <div class="addressWidth addressBottom" style="padding: 1rem; background-color: #000; width: 100%; box-sizing: border-box;">
             <h3 style="letter-spacing: 1px; margin-bottom: 5px;">COMPRO ORO PINO MONTANO</h3>
             <hr style="border: 0.5px solid #d4af37; width: 50%; margin: 0.5rem auto;">
             <p style="color: #fff; margin-top: 5px; font-family: Arial, Helvetica, sans-serif; font-size: 16px;">Nuestro
@@ -152,6 +156,17 @@
               Teléfono: <a class="aboreto" href="tel:+34611023363" style="color: #d4af37; text-decoration: none;">611
                 023
                 363</a></p>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: 15px; color: #d4af37; padding: 0.5rem;">
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem; max-width: 800px; margin: auto;">
+          <div class="addressWidth addressBottom" style="padding: 1rem; background-color: #000; width: 100%; box-sizing: border-box;">
+            <h3 style="letter-spacing: 1px; margin-bottom: 5px;">COMPRO ORO BELLAVISTA</h3>
+            <hr style="border: 0.5px solid #d4af37; width: 50%; margin: 0.5rem auto;">
+            <p style="color: #fff; margin-top: 5px; font-family: Arial, Helvetica, sans-serif; font-size: 16px;">Nuestro Compro Oro Bellavista está ubicado en:</p>
+            <p style="color: #d4af37; margin-top: 5px">Calle Guadalajara 46, Sevilla</p>
+            <p style="color: #fff; margin-top: 5px; font-family: Arial, Helvetica, sans-serif; font-size: 16px;">Teléfono: <a class="aboreto" href="tel:+34611023363" style="color: #d4af37; text-decoration: none;">611 023 363</a></p>
           </div>
         </div>
       </div>
@@ -292,6 +307,7 @@
     <section id="contacto" class="text-center aboreto" style="margin-top: 20px;">
       <h2>Contacto y ubicación del compro oro en Bellavista</h2>
 
+      <!--
       <div id="bermejales" style="scroll-margin-top: 80px;">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1585.8671995608436!2d-5.979626048869218!3d37.34879623418728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126ff4387af63f%3A0x2535afd5a163792e!2sCOMPRO%20ORO%20Y%20PLATA%20SEVILLA%20BERMEJALES!5e0!3m2!1ses!2ses!4v1750763489000!5m2!1ses!2ses"
@@ -344,6 +360,24 @@
                 style="color: #d4af37; text-decoration: none;">611 023 363</a></p>
             <p style="color: #fff;">WhatsApp disponible</p>
           </div>
+        </div>
+      </div>
+      -->
+      <div style="display: flex; flex-direction: column; gap: 2.5rem; max-width: 1000px; margin: 20px auto;">
+        <div id="bermejales" style="scroll-margin-top: 80px; border: 2px solid #d4af37; border-radius: 15px; overflow: hidden; background-color: #111; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);">
+          <div style="background-color: #d4af37; color: #000; padding: 0.6rem; font-weight: bold; letter-spacing: 1px;"><h3 style="margin: 0; font-size: 1.2rem;">📍 COMPRO ORO BERMEJALES</h3></div>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1585.8671995608436!2d-5.979626048869218!3d37.34879623418728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126ff4387af63f%3A0x2535afd5a163792e!2sCOMPRO%20ORO%20Y%20PLATA%20SEVILLA%20BERMEJALES!5e0!3m2!1ses!2ses!4v1750763489000!5m2!1ses!2ses" width="100%" height="280" style="border:0; display: block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div style="background-color: #000; color: #d4af37; padding: 1.2rem;"><div style="display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center; gap: 1rem;"><div><h4 style="letter-spacing: 1px; color: #d4af37; margin-bottom: 0.3rem;">DIRECCIÓN</h4><p style="color: #fff; margin: 0;">Calle Nuestra Señora del Pilar 12, Sevilla</p></div><div><h4 style="letter-spacing: 1px; color: #d4af37; margin-bottom: 0.3rem;">CONTACTO</h4><p style="color: #fff; margin: 0;">Teléfono: <a href="tel:+34611023363" style="color: #d4af37; text-decoration: none;">611 023 363</a></p><p style="color: #aaa; font-size: 0.85rem; margin-top: 0.2rem;">WhatsApp disponible</p></div></div></div>
+        </div>
+        <div id="pinoMontano" style="scroll-margin-top: 80px; border: 2px solid #d4af37; border-radius: 15px; overflow: hidden; background-color: #111; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);">
+          <div style="background-color: #d4af37; color: #000; padding: 0.6rem; font-weight: bold; letter-spacing: 1px;"><h3 style="margin: 0; font-size: 1.2rem;">📍 COMPRO ORO PINO MONTANO</h3></div>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.8604896012353!2d-5.9735629242014046!3d37.4167722720777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1269d917ac0c37%3A0x783bc107a63f256b!2sCOMPRO%20ORO%20Y%20PLATA%20SEVILLA%20PINO%20MONTANO!5e0!3m2!1ses!2ses!4v1750762848565!5m2!1ses!2ses" width="100%" height="280" style="border:0; display: block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div style="background-color: #000; color: #d4af37; padding: 1.2rem;"><div style="display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center; gap: 1rem;"><div><h4 style="letter-spacing: 1px; color: #d4af37; margin-bottom: 0.3rem;">DIRECCIÓN</h4><p style="color: #fff; margin: 0;">Calle Parque de Grazalema 18, Sevilla <span style="color: #d4af37;">(frente a la S-30)</span></p></div><div><h4 style="letter-spacing: 1px; color: #d4af37; margin-bottom: 0.3rem;">CONTACTO</h4><p style="color: #fff; margin: 0;">Teléfono: <a href="tel:+34611023363" style="color: #d4af37; text-decoration: none;">611 023 363</a></p><p style="color: #aaa; font-size: 0.85rem; margin-top: 0.2rem;">WhatsApp disponible</p></div></div></div>
+        </div>
+        <div id="bellavista" style="scroll-margin-top: 80px; border: 2px solid #d4af37; border-radius: 15px; overflow: hidden; background-color: #111; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);">
+          <div style="background-color: #d4af37; color: #000; padding: 0.6rem; font-weight: bold; letter-spacing: 1px;"><h3 style="margin: 0; font-size: 1.2rem;">📍 COMPRO ORO BELLAVISTA</h3></div>
+          <iframe src="https://maps.google.com/maps?q=Calle+Guadalajara+46,+41014+Sevilla&t=&z=16&ie=UTF8&iwloc=&output=embed" width="100%" height="280" style="border:0; display: block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div style="background-color: #000; color: #d4af37; padding: 1.2rem;"><div style="display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center; gap: 1rem;"><div><h4 style="letter-spacing: 1px; color: #d4af37; margin-bottom: 0.3rem;">DIRECCIÓN</h4><p style="color: #fff; margin: 0;">Calle Guadalajara 46, Sevilla</p></div><div><h4 style="letter-spacing: 1px; color: #d4af37; margin-bottom: 0.3rem;">CONTACTO</h4><p style="color: #fff; margin: 0;">Teléfono: <a href="tel:+34611023363" style="color: #d4af37; text-decoration: none;">611 023 363</a></p><p style="color: #aaa; font-size: 0.85rem; margin-top: 0.2rem;">WhatsApp disponible</p></div></div></div>
         </div>
       </div>
     </section>
